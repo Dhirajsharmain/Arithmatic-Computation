@@ -16,10 +16,10 @@ myDict[2]=$result1
 myDict[3]=$result2
 myDict[4]=$result3
 
-echo ${myDict[@]}
 for ((i=0; i<=3; i++))
 do 
     myArray[$i]=${myDict[$(($i+1))]}
 done
 
-echo ${myArray[@]}
+Descending=$(printf '%s\n' "${myArray[@]}" | sort -n)
+echo $Descending
