@@ -22,4 +22,5 @@ do
 done
 
 Descending=$(printf '%s\n' "${myArray[@]}" | sort -n)
-echo $Descending
+Ascending=$(printf '%s\n' "${myArray[@]}" | sort -r)
+echo $Ascending
