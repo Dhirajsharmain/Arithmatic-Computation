@@ -6,4 +6,5 @@ read a b c
 result=$(($a+$b*$c))
 result1=$(($a*$b+$c))
 result2=$(($c+$a/$b))
-echo $result2
+result3=$(($a%$b+$c))
+echo $result3
