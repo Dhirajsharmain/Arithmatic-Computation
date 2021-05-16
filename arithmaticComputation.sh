@@ -21,8 +21,12 @@ do
     myArray[$i]=${myDict[$(($i+1))]}
 done
 
+<<<<<<< HEAD
 echo old One Here : ${myArray[@]}
 
+=======
+#Descending order Here
+>>>>>>> UC9-SortingResultsAscending
 for ((i = 0; i<5; i++))
 do  
     for((j = 0; j<5-i-1; j++))
@@ -38,4 +42,20 @@ do
     done
 done
 
-echo Descending order Here : ${myArray[@]}
+#Ascending order Here
+for ((i = 0; i<5; i++))
+do  
+    for((j = 0; j<5-i-1; j++))
+    do
+      
+        if [ ${myArray[j]} -gt ${myArray[$((j+1))]} ]
+        then
+            # swap
+            temp=${myArray[j]}
+            myArray[$j]=${myArray[$((j+1))]}  
+            myArray[$((j+1))]=$temp
+        fi
+    done
+done
+
+echo Ascending order Here : ${myArray[@]}
