@@ -21,6 +21,21 @@ do
     myArray[$i]=${myDict[$(($i+1))]}
 done
 
-Descending=$(printf '%s\n' "${myArray[@]}" | sort -n)
-Ascending=$(printf '%s\n' "${myArray[@]}" | sort -r)
-echo $Ascending
+echo old One Here : ${myArray[@]}
+
+for ((i = 0; i<5; i++))
+do  
+    for((j = 0; j<5-i-1; j++))
+    do
+      
+        if [ ${myArray[j]} -lt ${myArray[$((j+1))]} ]
+        then
+            # swap
+            temp=${myArray[j]}
+            myArray[$j]=${myArray[$((j+1))]}  
+            myArray[$((j+1))]=$temp
+        fi
+    done
+done
+
+echo Descending order Here : ${myArray[@]}
